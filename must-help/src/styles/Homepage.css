@@ -1,0 +1,57 @@
+.homepage {
+    position: relative;
+    width: 100%;
+    height: 75vh; /* Full viewport height */
+    overflow: hidden;
+  }
+  
+  .background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the entire background */
+    z-index: -1; /* Places video behind content */
+  }
+  
+  .homepage-content {
+    position: relative;
+    z-index: 1; /* Places content above the video */
+    text-align: center;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+    padding: 1rem;
+  }
+  
+  /* Responsive Design */
+  
+  /* Small screens (mobile) */
+  @media (max-width: 768px) {
+    .homepage {
+        position: relative;
+        width: 100%;
+        height: 45vh; /* Full viewport height */
+        overflow: hidden;
+      }
+  }
+  
+  /* Medium screens (tablets) */
+  @media (min-width: 769px) and (max-width: 1200px) {
+    .homepage {
+        position: relative;
+        width: 100%;
+        height: 75vh; /* Full viewport height */
+        overflow: hidden;
+      }
+  }
+  
+  /* Large screens (desktops) */
+  @media (min-width: 1201px) {
+    .homepage-content {
+      font-size: 2rem;
+      padding: 1.5rem;
+    }
+  }

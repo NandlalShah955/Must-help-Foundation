@@ -9,7 +9,7 @@ function App() {
         <BrowserRouter>
         <Navbar />
           <AppRoute />
-        <Footer />
+        {/* <Footer /> */}
           
         </BrowserRouter>
     </>

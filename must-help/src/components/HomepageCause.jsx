@@ -1,17 +1,25 @@
 import React, { useState, useEffect } from 'react'
 import '../styles/Homepage.css';
 const HomepageCause = () => {
-  const [data, setdata] = useState([]);  // State to hold data
-  const getData = async () => {
-    const res = await fetch('https://fakestoreapi.com/products')
-    const jsondata = await res.json()
-    console.log(jsondata, "jsondata");
-    setdata(jsondata)
-  }
-
-  useEffect(() => {
-    getData()
-  }, []) // Empty dependency array ensures getData is called only once
+  
+const data=[
+{image:'https://thaagamorg-eb-s3.s3.amazonaws.com/media/deps/causes/card/homeless_card.jpg',title:'Feed A Homeless Perons',price:'25'},
+{image:'https://thaagamorg-eb-s3.s3.amazonaws.com/media/deps/causes/card/homeless_card.jpg',title:'Feed A Homeless Perons',price:'25'},
+{image:'https://thaagamorg-eb-s3.s3.amazonaws.com/media/deps/causes/card/homeless_card.jpg',title:'Feed A Homeless Perons',price:'25'},
+{image:'https://thaagamorg-eb-s3.s3.amazonaws.com/media/deps/causes/card/homeless_card.jpg',title:'Feed A Homeless Perons',price:'25'},
+{image:'https://thaagamorg-eb-s3.s3.amazonaws.com/media/deps/causes/card/homeless_card.jpg',title:'Feed A Homeless Perons',price:'25'},
+{image:'https://thaagamorg-eb-s3.s3.amazonaws.com/media/deps/causes/card/homeless_card.jpg',title:'Feed A Homeless Perons',price:'25'},
+{image:'https://thaagamorg-eb-s3.s3.amazonaws.com/media/deps/causes/card/homeless_card.jpg',title:'Feed A Homeless Perons',price:'25'},
+{image:'https://thaagamorg-eb-s3.s3.amazonaws.com/media/deps/causes/card/homeless_card.jpg',title:'Feed A Homeless Perons',price:'25'},
+{image:'https://thaagamorg-eb-s3.s3.amazonaws.com/media/deps/causes/card/homeless_card.jpg',title:'Feed A Homeless Perons',price:'25'},
+{image:'https://thaagamorg-eb-s3.s3.amazonaws.com/media/deps/causes/card/homeless_card.jpg',title:'Feed A Homeless Perons',price:'25'},
+{image:'https://thaagamorg-eb-s3.s3.amazonaws.com/media/deps/causes/card/homeless_card.jpg',title:'Feed A Homeless Perons',price:'25'},
+{image:'https://thaagamorg-eb-s3.s3.amazonaws.com/media/deps/causes/card/homeless_card.jpg',title:'Feed A Homeless Perons',price:'25'},
+{image:'https://thaagamorg-eb-s3.s3.amazonaws.com/media/deps/causes/card/homeless_card.jpg',title:'Feed A Homeless Perons',price:'25'},
+{image:'https://thaagamorg-eb-s3.s3.amazonaws.com/media/deps/causes/card/homeless_card.jpg',title:'Feed A Homeless Perons',price:'25'},
+{image:'https://thaagamorg-eb-s3.s3.amazonaws.com/media/deps/causes/card/homeless_card.jpg',title:'Feed A Homeless Perons',price:'25'},
+]
+  
 
   return (
     <>

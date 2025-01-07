@@ -8,7 +8,7 @@ const data=[
 {image:'https://thaagamorg-eb-s3.s3.amazonaws.com/media/deps/causes/card/homeless_card.jpg',title:'Feed A Homeless Perons',price:'25'},
 {image:'https://thaagamorg-eb-s3.s3.amazonaws.com/media/deps/causes/card/homeless_card.jpg',title:'Feed A Homeless Perons',price:'25'},
 {image:'https://thaagamorg-eb-s3.s3.amazonaws.com/media/deps/causes/card/homeless_card.jpg',title:'Feed A Homeless Perons',price:'25'},
-{image:'https://thaagamorg-eb-s3.s3.amazonaws.com/media/deps/causes/card/homeless_card.jpg',title:'Feed A Homeless Perons',price:'25'},
+{image:'https://thaagamorg-eb-s3.s3.amazonaws.com/media/deps/causes/card/d_thaali.jpeg',title:'Feed A Homeless Perons',price:'25'},
 {image:'https://thaagamorg-eb-s3.s3.amazonaws.com/media/deps/causes/card/homeless_card.jpg',title:'Feed A Homeless Perons',price:'25'},
 {image:'https://thaagamorg-eb-s3.s3.amazonaws.com/media/deps/causes/card/homeless_card.jpg',title:'Feed A Homeless Perons',price:'25'},
 {image:'https://thaagamorg-eb-s3.s3.amazonaws.com/media/deps/causes/card/homeless_card.jpg',title:'Feed A Homeless Perons',price:'25'},
@@ -34,7 +34,7 @@ const data=[
               <img src={el.image} alt={el.title} />
               <div className='cause-title'>
               <h4>{el.title}</h4>
-              <h4>Rs{el.price}/person</h4>
+              <p>Rs{el.price}/person</p>
 
               </div>
             </div>

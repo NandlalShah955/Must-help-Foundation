@@ -1,8 +1,9 @@
 import React from 'react'
+import HomepageCause from "../components/HomepageCause"
 
 const Cause = () => {
   return (
-    <div>Cause</div>
+    <><HomepageCause/></>
   )
 }
 

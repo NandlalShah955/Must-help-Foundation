@@ -1,6 +1,7 @@
 import React from 'react';
 import "../styles/Homepage.css";
 import HomepageCause from '../components/HomepageCause';
+import ImageScroll from "../components/ImageScroll";
 
 const Homepage = () => {
     return (
@@ -17,7 +18,9 @@ const Homepage = () => {
         </div>
         
         <HomepageCause/>
+        <ImageScroll/>
         </>
+        
     );
 }
 

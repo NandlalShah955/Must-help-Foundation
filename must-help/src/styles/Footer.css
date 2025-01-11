@@ -40,6 +40,7 @@ footer{
     padding: 50px 0 30px;
     font-size: 13px;
     line-height: 20px;
+    border-top: 2px solid black;
 }
 .row{
     width: 85%;
@@ -164,5 +165,10 @@ footer .copyright{
     }
     100%{
         left:100%;
+    }
+}
+@media (max-width: 768px) {
+    .social_icons{
+        display: flex;
     }
 }

@@ -54,7 +54,7 @@ const AppContainer = styled.div`
   width: 100%;
   height: 341px;
   color: #000000;
-
+margin-top:50px;
   position: relative;
   display: flex;
   align-items: center;
@@ -106,11 +106,14 @@ const Note = styled.div`
    @media (max-width: 768px) {
     font-size: 16px;
     margin-bottom: 20px;
+    text-align:center; 
   }
 
   @media (max-width: 480px) {
     font-size: 14px;
     margin-bottom: 10px;
+text-align:center;    
+
   }
 `;
 
@@ -188,7 +191,9 @@ const Image = styled.img`
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
    @media (max-width: 768px) {
-    padding: 5px 10px;
+    padding: 5px 45px;
+     box-shadow: none;
+     margin:14px;
   }
 
   

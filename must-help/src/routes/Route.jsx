@@ -6,6 +6,7 @@ import Blog from "../pages/Blog";
 import Cause from "../pages/Cause";
 import Contact from "../pages/Contact";
 import Gallery from "../pages/Gallery";
+import VolunteerForm from "../pages/VolunteerForm";
 
 
 const AppRoute = () => {
@@ -18,6 +19,7 @@ const AppRoute = () => {
                 <Route path="/cause" element={<Cause />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/gallery" element={<Gallery />} />
+                <Route path="/volunteerform" element={<VolunteerForm />} />
                 
             </Routes>
         </>

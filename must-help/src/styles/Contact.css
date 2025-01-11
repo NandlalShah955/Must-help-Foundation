@@ -1,0 +1,176 @@
+
+.contact-main{
+margin-top: -17px;
+     background-color: #fef7e5;
+ }
+ .contact-heading-tag{
+border: 1px solid #fef7e5;
+width: 60%;
+margin-left: 11%;
+ }
+ .contact-heading-tag h1{
+margin-top: 30px;
+font-weight: 650;
+ }
+ .contact-india{
+    /* border: 1px solid red; */
+  display: flex;
+    height: 40px;
+    text-align: start;
+    width: 30%;
+    gap: 10px;
+ }
+ .contact-india img{
+   border-radius: 10px;
+    height: 100%;
+ }
+ .contact-india p{
+  font-size: 20px;
+font-weight: 500;
+ }
+.contact-container {
+    display: flex;
+    background-color: #fef7e5;
+    
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 20px;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 60px;
+  }
+  
+  .contact-info {
+    flex: 1 1 350px;
+    padding: 20px;
+    background: #fef7e5;
+    border-radius: 8px;
+}
+
+.contact-form {
+    flex: 1 1 350px;
+    padding: 20px;
+    background: #fef7e5;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 4px 4px 10px #c1dee6, -4px -4px 10px #c1dee6;
+  }
+  .form-row {
+    display: flex;
+    gap: 25px;
+    width: 100%;
+}
+.input{
+    width: 270px;
+    height: 45px;
+    border: 1px solid #000000;
+}
+.textarea{
+      border: 1px solid #000000;
+
+  }
+  .map iframe {
+    width: 100%;
+    height: 280px;
+    border-radius: 8px;
+  }
+  .contact-submit{
+    background-color: #007bff;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 25px;
+    width: 100%;
+    height: 50%;
+  }
+ 
+  input::placeholder,
+textarea::placeholder {
+  color: #333; 
+  font-size: 14px;
+}
+.contact-info p {
+    margin: 5px 0;
+    color: #555;
+  }
+ .contact-info h4{
+    font-weight: 400;
+    padding: 0px 0px;
+    font-size: 20px;
+  }
+  .ant-form-item {
+    margin-bottom: 15px;
+  }
+  .contact-mobil{
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+    gap: 50px;
+  }
+  button {
+    background-color: #1890ff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #40a9ff;
+  }
+ 
+  @media (max-width: 768px) {
+    .contact-container {
+      flex-direction: column;
+      width: 90%;
+      margin-top: 20px;
+    }
+  
+    .map iframe {
+      height: 150px;
+    }
+    .form-row {
+        /* display: flex; */
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+    }
+    .input{
+        width: 100%;
+        height: 35px;
+       
+    }
+    .contact-info{
+        width: 90%;
+    }
+    .contact-heading-tag{
+        width: 60%;
+        width: 90%;
+        margin-left: 5%;
+         }
+    .contact-heading-tag h1{
+        font-weight: 650;
+        font-size: 20px;
+         }
+         .contact-info h4{
+            font-weight: 400;
+            padding: 0px 0px;
+            font-size: 15px;
+          }
+          .contact-india{
+          
+            height: 30px;
+           
+            width: 30%;
+            gap: 10px;
+         }
+         .contact-india p{
+            font-size: 18px;
+          font-weight: 500;
+           }
+  }

@@ -15,7 +15,7 @@ const Contact = () => {
 
       <div className='contact-heading-tag'>
         <h1>Need Assistance? Reach Out to Our<br/> Support Team</h1>
-        <p></p>
+        
       </div>
 
 

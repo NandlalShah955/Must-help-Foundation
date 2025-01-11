@@ -22,7 +22,7 @@ const data=[
   
 
   return (
-    <>
+    <div className='cause_main'>
     <div className='filters'>
 
          <h1>Our Causes</h1>
@@ -43,7 +43,7 @@ const data=[
           <p>Loading data...</p> // Show loading message while data is fetching
         )}
       </div>
-    </>
+    </div>
   )
 }
 

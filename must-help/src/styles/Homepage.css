@@ -4,7 +4,9 @@
     height: 75vh;
     overflow: hidden;
 }
-
+.cause_main{
+    background-color: #fef7e5;
+}
 .background-video {
     position: absolute;
     top: 50%;
@@ -27,7 +29,6 @@
 }
 
 .filters {
-    /* border: 1px solid red; */
     margin-top: 130px;
     width: 85%;
     display: flex;

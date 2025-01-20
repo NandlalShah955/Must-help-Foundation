@@ -5,11 +5,20 @@
 
 .blog-heading-tag {
     border: 1px solid #fef7e5;
-    width: 60%;
+    width: 70%;
     margin-left: 11%;
 }
 
 .blog-heading-tag h1 {
     margin-top: 60px;
     font-weight: 650;
+}
+.blog-section{
+    margin-top: 50px;
+    width: 70%;
+    height: auto;
+    margin-left: 11%;
+    gap: 60px;
+    /* margin: 10px auto; */
+    /* border: 1px solid red; */
 }

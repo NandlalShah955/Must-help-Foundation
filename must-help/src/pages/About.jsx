@@ -5,10 +5,10 @@ const About = () => {
   const galleryData = [
     { image: "https://balloon-mahal.netlify.app/assets/img/Aman.JPG", name: "Mr.Aman Poddar  ", role: "CEO & Founder" },
     { image: "https://thaagamorg-eb-s3.s3.amazonaws.com/static/website/assets/images/about/charles_sir.webp", name: "Mr.Rana Poddar  ", role: "Managing Director" },
-    { image: "https://thaagamorg-eb-s3.s3.amazonaws.com/static/website/images/recent-posts/Homeless/CHILD_2.webp", name: "HOMELESS  " },
-    { image: "https://thaagamorg-eb-s3.s3.amazonaws.com/static/website/images/recent-posts/Homeless/CHILD_2.webp", name: "HOMELESS  " },
-    { image: "https://thaagamorg-eb-s3.s3.amazonaws.com/static/website/images/recent-posts/Homeless/CHILD_2.webp", name: "HOMELESS  " },
-    { image: "https://thaagamorg-eb-s3.s3.amazonaws.com/static/website/images/recent-posts/Homeless/CHILD_2.webp", name: "HOMELESS  " },
+    { image: "https://thaagamorg-eb-s3.s3.amazonaws.com/static/website/images/recent-posts/Homeless/CHILD_2.webp",  },
+    { image: "https://thaagamorg-eb-s3.s3.amazonaws.com/static/website/images/recent-posts/Homeless/CHILD_2.webp",  },
+    { image: "https://thaagamorg-eb-s3.s3.amazonaws.com/static/website/images/recent-posts/Homeless/CHILD_2.webp",  },
+    { image: "https://thaagamorg-eb-s3.s3.amazonaws.com/static/website/images/recent-posts/Homeless/CHILD_2.webp",  },
 
   ]
   return (

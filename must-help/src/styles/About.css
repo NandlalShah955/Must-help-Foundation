@@ -4,7 +4,6 @@
 }
 
 .about-heading-tag {
-    border: 1px solid #fef7e5;
     width: 85%;
     margin: 0px auto;
     display: flex;
@@ -124,7 +123,6 @@
 
 }
 .team-section{
-    border: 1px solid red;
     margin: 0 auto;
     height: auto;
     width: 85%;
@@ -156,8 +154,6 @@ border-radius: 12px;
     width: 250px;
     height: auto;
     text-align: center;
-    border: 1px solid red;
-    /* margin: 10px; */
     line-height: 4px;
 }
 

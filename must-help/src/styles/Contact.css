@@ -2,6 +2,7 @@
 .contact-main{
 margin-top: -17px;
      background-color: #fef7e5;
+     padding-bottom: 40px;
  }
  .contact-heading-tag{
 border: 1px solid #fef7e5;
@@ -149,14 +150,13 @@ textarea::placeholder {
         width: 90%;
     }
     .contact-heading-tag{
-        width: 60%;
         width: 90%;
         margin-left: 5%;
          }
-    .contact-heading-tag h1{
+    /* .contact-heading-tag h1{
         font-weight: 650;
         font-size: 20px;
-         }
+         } */
          .contact-info h4{
             font-weight: 400;
             padding: 0px 0px;

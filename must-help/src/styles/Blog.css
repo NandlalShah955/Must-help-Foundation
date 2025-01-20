@@ -1,0 +1,15 @@
+.blog-main {
+    background-color: #fef7e5;
+    padding-bottom: 40px;
+}
+
+.blog-heading-tag {
+    border: 1px solid #fef7e5;
+    width: 60%;
+    margin-left: 11%;
+}
+
+.blog-heading-tag h1 {
+    margin-top: 60px;
+    font-weight: 650;
+}

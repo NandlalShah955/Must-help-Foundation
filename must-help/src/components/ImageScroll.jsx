@@ -51,15 +51,17 @@ const ImageScroll = () => {
 
 export default ImageScroll
 const AppContainer = styled.div`
-  width: 100%;
+ background-color: #fef7e5;  
+ padding-top:50px;
+ padding-bottom 50px
+width: 100%;
   height: 341px;
   color: #000000;
-margin-top:50px;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom:40px;
+  padding-bottom:40px;
    @media (max-width: 768px) {
     height: 300px;
     margin-bottom: 20px;

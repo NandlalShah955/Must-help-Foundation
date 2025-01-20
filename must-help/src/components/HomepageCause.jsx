@@ -23,7 +23,7 @@ const data=[
 
   return (
     <div className='cause_main'>
-    <div className='filters'>
+    <div className='cause-heading-tag'>
 
          <h1>Our Causes</h1>
     </div>

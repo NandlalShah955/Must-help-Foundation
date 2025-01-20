@@ -63,7 +63,9 @@ const Footer = () => {
         </div>
       </div>
       <hr />
-      <p className="copyright">Must Help Foundation Ⓒ 2022 - All Rights Reserved</p>
+      <p className="copyright"><span>
+      Must Help Foundation
+        </span>  Ⓒ 2022 - All Rights Reserved</p>
     </footer>
   );
 };

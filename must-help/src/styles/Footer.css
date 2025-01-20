@@ -139,6 +139,10 @@ hr{
 footer .copyright{
     text-align: center;
 }
+.copyright span{
+   color:#009dff;
+ font-weight: bold;
+}
 .bottom_line{
     width: 100%;
     height: 5px;

@@ -1,5 +1,6 @@
 .gallery_main{
     background-color:#fef7e5 ;
+    padding-bottom: 40px;
 }
 .gallery-heading-tag {
     border: 1px solid #fef7e5;
@@ -20,6 +21,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 25px;
+   
 }
 
 .gallery_images-item {
@@ -63,7 +65,6 @@
 @media (min-width: 769px) and (max-width: 1200px) {
     .gallery_images {
         grid-template-columns: repeat(2, 1fr);
-        /* 3 columns on medium screens */
     }
 
     .gallery_images-item img {

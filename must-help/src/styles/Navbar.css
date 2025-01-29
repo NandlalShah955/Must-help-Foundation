@@ -113,6 +113,7 @@ height: 4.5rem;
       height: calc(100vh - 90px);
       transition: all 0.3s ease-in;
       overflow: hidden;
+      z-index: 11;
     }
   
     .nav-elements.active {
@@ -141,12 +142,25 @@ height: 4.5rem;
   }
   
 @media (max-width: 768px) {
+  .nav-elements ul {
+  
+    gap: 0px;
+   
+  }
   .nav-elements ul li:not(:last-child) {
     margin-right: 30px;
   }
   .navbar-right{
  display: none;
   }
+  .nav-elements.active {
+    width: 234px;
+    z-index: 13;
+  }
+  .nav-elements ul a {
+    padding-left: 0px;
+  }
+
 }
 
 @media (max-width: 600px) {
@@ -170,6 +184,7 @@ height: 4.5rem;
 
   .nav-elements.active {
     width: 234px;
+    z-index: 11;
   }
 
   .nav-elements ul {

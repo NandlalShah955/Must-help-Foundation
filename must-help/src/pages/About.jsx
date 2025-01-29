@@ -55,8 +55,8 @@ const About = () => {
         </div>
       </div>
       {/* Get in touch content  */}
-      <section class="get_touch">
-        <div class="get_touch_content">
+      <section className="get_touch">
+        <div className="get_touch_content">
           <div><span>Question ?</span> <p>Our Experts will help find the grar that’s right for you</p></div>
           <Link to='/contact'>
             <button className='get_touch_button'>

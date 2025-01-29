@@ -15,10 +15,40 @@
 }
 .blog-section{
     margin-top: 50px;
-    width: 70%;
+    width: 80%;
     height: auto;
-    margin-left: 11%;
+    margin: 0 auto;
     gap: 60px;
+    margin-top: 20px;
     /* margin: 10px auto; */
     /* border: 1px solid red; */
+}
+.blog-section img{
+    
+    width: 100%;
+    height: 100%;
+}
+@media (max-width: 768px) {
+    .blog-main {
+        text-align: center;
+    }
+    .blog-section{
+        
+        margin-top: 10px;
+        /* margin: 0 auto; */
+        width: 90%;
+        
+    }
+    
+    
+}
+@media (min-width: 769px) and (max-width: 1200px) {
+    .blog-section{
+        
+        margin: 0 auto;
+        margin-top: 10px;
+        width: 90%;
+        
+    }
+
 }

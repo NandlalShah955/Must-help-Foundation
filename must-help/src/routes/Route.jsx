@@ -4,9 +4,11 @@ import Homepage from "../pages/Homepage";
 import About from "../pages/About";
 import Blog from "../pages/Blog";
 import Cause from "../pages/Cause";
+import CauseDetails from "../pages/CauseDetails";
 import Contact from "../pages/Contact";
 import Gallery from "../pages/Gallery";
 import VolunteerForm from "../pages/VolunteerForm";
+
 
 
 const AppRoute = () => {
@@ -17,6 +19,7 @@ const AppRoute = () => {
                 <Route path="/about" element={<About />} />
                 <Route path="/blog" element={<Blog />} />
                 <Route path="/cause" element={<Cause />} />
+                <Route path="/cause_detail" element={<CauseDetails />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/gallery" element={<Gallery />} />
                 <Route path="/volunteerform" element={<VolunteerForm />} />

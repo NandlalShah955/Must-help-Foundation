@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState,useEffect } from 'react';
+import { Link ,useLocation} from 'react-router-dom';
 import { FiSearch, FiHeart } from 'react-icons/fi';
 import '../styles/Navbar.css'; // Import the custom CSS file
 import logo from '../assets/Must-help-logo.png';
@@ -45,17 +45,22 @@ const Hamburger = () => (
 
 const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(false);
+  const location = useLocation();
 
   const handleShowNavbar = () => {
     setShowNavbar(!showNavbar);
   };
-
+  useEffect(() => {
+    setShowNavbar(false);
+  }, [location]);
   return (
     <nav className="navbar">
       <div className="container">
         {/* Logo Section */}
         <div className="logo">
+          <Link to='/'>
           <img src={logo} alt="Must Help Foundation" />
+          </Link>
         </div>
 
         {/* Hamburger Menu Icon */}

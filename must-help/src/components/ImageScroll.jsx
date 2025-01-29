@@ -1,26 +1,21 @@
 import React from "react";
 import styled, { keyframes, css } from "styled-components";
-
+import Feedhomeless from "../assets/Feedhomelesskid.jpeg";
+import SponsorCake from "../assets/sponsorcake.jpeg";
+import Surprisebox from "../assets/surprisebox.jpeg";
+import Warmblanket from "../assets/Donatewarmblanket.png";
+import Eduationkit from "../assets/educationkit.png";
+import Milkandbanana from "../assets/milkandbanana.jpeg";
 
 const ImageScroll = () => {
     const row1 = [
-        "https://thaagamorg-eb-s3.s3.amazonaws.com/static/website/assets/images/Home_Gallery/gal_2.webp",
-        "https://thaagamorg-eb-s3.s3.amazonaws.com/static/website/assets/images/Home_Gallery/gal_2.webp",
-        "https://thaagamorg-eb-s3.s3.amazonaws.com/static/website/assets/images/Home_Gallery/gal_2.webp",
-        "https://thaagamorg-eb-s3.s3.amazonaws.com/static/website/assets/images/Home_Gallery/gal_2.webp",
-        "https://thaagamorg-eb-s3.s3.amazonaws.com/static/website/assets/images/Home_Gallery/gal_2.webp",
-        "https://thaagamorg-eb-s3.s3.amazonaws.com/static/website/assets/images/Home_Gallery/gal_2.webp",
+      Feedhomeless,
+      SponsorCake,
+      Surprisebox,
+      Warmblanket,
+      Eduationkit,
+      Milkandbanana,
       ];
-    
-    //   const row2 = [
-    //     "https://thaagamorg-eb-s3.s3.amazonaws.com/static/website/assets/images/Home_Gallery/gal_4.webp",
-    //     "https://thaagamorg-eb-s3.s3.amazonaws.com/static/website/assets/images/Home_Gallery/gal_4.webp",
-    //     "https://thaagamorg-eb-s3.s3.amazonaws.com/static/website/assets/images/Home_Gallery/gal_4.webp",
-    //     "https://thaagamorg-eb-s3.s3.amazonaws.com/static/website/assets/images/Home_Gallery/gal_4.webp",
-    //     "https://thaagamorg-eb-s3.s3.amazonaws.com/static/website/assets/images/Home_Gallery/gal_4.webp",
-    //     "https://thaagamorg-eb-s3.s3.amazonaws.com/static/website/assets/images/Home_Gallery/gal_4.webp",
-    //   ];
-    
   
     return (
         <AppContainer>
@@ -69,7 +64,7 @@ width: 100%;
 
   @media (max-width: 480px) {
     height: 250px;
-    margin-bottom: 10px;
+    margin-bottom: 3px;
   }
 `;
 

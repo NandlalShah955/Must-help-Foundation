@@ -61,9 +61,9 @@ const HomepageCause = () => {
                 <FaWhatsapp
                   className='whatsapp-icon'
                   onClick={(e) => {
-                    e.stopPropagation(); // Prevent triggering the parent onClick
+                    e.stopPropagation();
                     const message = encodeURIComponent(`Hi, I want to donate for ${el.title}. How can I proceed?`);
-                    const phoneNumber = '918448674560'; // Replace with the actual WhatsApp number
+                    const phoneNumber = '918448674560'; 
                     window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
                   }}
                 />

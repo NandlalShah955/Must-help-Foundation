@@ -23,18 +23,48 @@
     padding: 20px;
     background-color: #fef7e5;
   }
+  .donation-form {
+    background-color: #fef7e5;
+    padding: 25px;
+    border-radius: 15px;
+    margin: auto;
+    width: 580px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 35px;
+    width: 100%;
+}
+.input{
+    width: 280px;
+    height: 45px;
+    border: 1px solid #000000;
+  }
+  .widerinput{
+    width: 560px;
+    height: 45px;
+    border: 1px solid #000000;
+ 
+
+}
+
+  .custom-label{
+   font-weight: 700;
+  
+  }
   
   .cause-details,
-  .donation-form,
   .recommend-causes {
-    background-color: #ffffff;
+    background-color: #fef7e5;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 20px;
   }
   
   .cause-details h2,
-  .donation-form h2,
   .recommend-causes h2 {
     font-size: 1.5em;
     margin-bottom: 15px;
@@ -52,29 +82,7 @@
     height: 80px;
     border-radius: 50%;
   }
-  
-  .donation-form form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .donation-form input,
-  .donation-form button {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .donation-form button {
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-  }
-  
-  .donation-form button:hover {
-    background-color: #0056b3;
-  }
+ 
   
   .recommend-causes ul {
     list-style-type: none;

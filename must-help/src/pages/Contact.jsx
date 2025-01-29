@@ -3,11 +3,11 @@ import "../styles/Contact.css"
 import { Form, Input, Button, Checkbox } from "antd";
 const Contact = () => {
   const onFinish = (values) => {
-    console.log("Form Data Submitted: ", values);
+    // console.log("Form Data Submitted: ", values);
   };
 
   const onFinishFailed = (errorInfo) => {
-    console.log("Form Submission Failed: ", errorInfo);
+    // console.log("Form Submission Failed: ", errorInfo);
   };
 
   return (

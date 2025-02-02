@@ -56,11 +56,11 @@
 
 .cause-item {
     width: 300px;
-    /* border: 1px solid red; */
     line-height: 20px;
     height: auto;
     position: relative;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .cause-item img {
@@ -264,6 +264,16 @@
 
     .voluteerdiv>div:nth-child(2) button {
         width: 100%;
+    }
+    .donate-btn {
+        width: 100px;
+        font-size: 10px;
+        padding: 10px 15px;
+    }
+    
+    .cause-item:hover .donate-btn {
+        bottom: -10px;
+        opacity: 1;
     }
 }
 

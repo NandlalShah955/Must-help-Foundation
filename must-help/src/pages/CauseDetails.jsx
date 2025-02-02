@@ -2,12 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Form, Input, Button, Select, DatePicker } from "antd";
 
-const { Option } = Select;
 import "../styles/CauseDetails.css";
+const extractPrice = (priceString) => {
+  const match = priceString.match(/\d+/); 
+  return match ? parseInt(match[0], 10) : null;
+};
 const CauseDetails = () => {
   const location = useLocation();
-  const { cause } = location.state || {};
-  // console.log(cause, "cause");
+  const { cause,price } = location.state || {};
+ 
+  const exactPrice = extractPrice(price);
+  console.log(cause,exactPrice ,"cause");
   const onFinish = (values) => {
     // console.log("Form Data Submitted: ", values);
   };

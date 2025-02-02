@@ -1,18 +1,20 @@
 import React from "react";
 import styled, { keyframes, css } from "styled-components";
 import Feedhomeless from "../assets/Feedhomelesskid.jpeg";
-import SponsorCake from "../assets/sponsorcake.jpeg";
-import Surprisebox from "../assets/surprisebox.jpeg";
-import Warmblanket from "../assets/Donatewarmblanket.png";
+import Slider_image1 from "../assets/Slider_image1.jpg"
+import Slider_image2 from "../assets/Slider_image2.jpg"
+import Slider_image3 from "../assets/Slider_image3.jpeg"
+import Slider_image4 from "../assets/Slider_image4.jpeg"
 import Eduationkit from "../assets/educationkit.png";
 import Milkandbanana from "../assets/milkandbanana.jpeg";
 
 const ImageScroll = () => {
     const row1 = [
       Feedhomeless,
-      SponsorCake,
-      Surprisebox,
-      Warmblanket,
+      Slider_image2,
+      Slider_image3,
+      Slider_image4,
+      Slider_image1,
       Eduationkit,
       Milkandbanana,
       ];

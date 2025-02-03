@@ -81,6 +81,7 @@
     .volunteer-form {
         width: 90%;
         padding: 30px;
+        margin-top: 10px;
       }
     
       .volunteer-form .form-row {
@@ -88,11 +89,14 @@
         gap: 20px;
       }
     
-      .volunteer-form .input#contact-form_name, .volunteer-form .input#contact-form_email, .volunteer-form .input#contact-form_phone, .volunteer-form .input#contact-form_instagram, .volunteer-form .input#contact-form_phone, .volunteer-form .input#contact-form_parcel, .volunteer-form .input#contact-form_count, .volunteer-form .input#contact-form_total_amount {
+      /* .volunteer-form .input#contact-form_name, .volunteer-form .input#contact-form_email, .volunteer-form .input#contact-form_phone, .volunteer-form .input#contact-form_instagram, .volunteer-form .input#contact-form_phone, .volunteer-form .input#contact-form_parcel, .volunteer-form .input#contact-form_count, .volunteer-form .input#contact-form_total_amount {
         width: 230px;
-    }
+    } */
+    .volunteer-form .input{
+      width: 290px;
+    } 
     .volunteer-form .ant-picker.ant-picker-outlined.css-dev-only-do-not-override-7ny38l.input.datepicker{
 
-        width: 230px;
+        width: 290px;
        }
 }

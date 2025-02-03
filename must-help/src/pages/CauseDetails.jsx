@@ -127,7 +127,7 @@ const CauseDetails = () => {
             <Form name="contact-form" layout="vertical" onFinish={onFinish} onFinishFailed={onFinishFailed}>
               <div className="form-row">
                 <Form.Item label="Donor Name" labelCol={{ className: "custom-label" }} name="name" rules={[{ required: true, message: "Please enter your name!" }]}>
-                  <Input placeholder="Your Name" className="input" />
+                  <Input placeholder="Your Name" className="causedetailsinput" />
                 </Form.Item>
                 <Form.Item
                   label="Email address"
@@ -138,7 +138,7 @@ const CauseDetails = () => {
                     { type: "email", message: "Please enter a valid email!" },
                   ]}
                 >
-                  <Input placeholder="Your Email" className="input" />
+                  <Input placeholder="Your Email" className="causedetailsinput" />
                 </Form.Item>
               </div>
 
@@ -155,28 +155,28 @@ const CauseDetails = () => {
                     },
                   ]}
                 >
-                  <Input placeholder="Your Phone" className='input' />
+                  <Input placeholder="Your Phone" className='causedetailsinput' />
                 </Form.Item>
                 <Form.Item label="Service Date" labelCol={{ className: "custom-label" }} name="service_date" rules={[{ required: true, message: "Please select a date!" }]}>
-                  <DatePicker className="input datepicker" />
+                  <DatePicker className="causedetailsinput datepicker" />
                 </Form.Item>
               </div>
 
               <div className="form-row">
                 <Form.Item label="Instagram ID (optional)" labelCol={{ className: "custom-label" }} name="instagram">
-                  <Input placeholder="Your Instagram ID" className="input" />
+                  <Input placeholder="Your Instagram ID" className="causedetailsinput" />
                 </Form.Item>
                 <Form.Item label="Name of Parcel" labelCol={{ className: "custom-label" }} name="parcel" rules={[{ required: true, message: "Please enter the parcel name!" }]}>
-                  <Input placeholder="Name of Parcel" className="input" />
+                  <Input placeholder="Name of Parcel" className="causedetailsinput" />
                 </Form.Item>
               </div>
 
               <div className="form-row">
                 <Form.Item label="Count" name="count" labelCol={{ className: "custom-label" }} rules={[{ required: true, message: "Please enter a count!" }]}>
-                  <Input type="number" min={1} placeholder="Count" className="input" />
+                  <Input type="number" min={1} placeholder="Count" className="causedetailsinput" />
                 </Form.Item>
                 <Form.Item label="Total Amount" name="total_amount" labelCol={{ className: "custom-label" }} rules={[{ required: true, message: "Please enter the total amount!" }]}>
-                  <Input type="number" min={0} placeholder="Total Amount" className="input" />
+                  <Input type="number" min={0} placeholder="Total Amount" className="causedetailsinput" />
                 </Form.Item>
               </div>
 

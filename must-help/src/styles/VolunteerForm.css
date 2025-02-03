@@ -1,0 +1,98 @@
+.volunteer-main {
+    background-color: #fef7e5;
+    padding-bottom: 40px;
+}
+
+.volunteer-heading-tag {
+    width: 85%;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.volunteer-heading-tag h1 {
+    margin-top: 60px;
+    font-weight: 650;
+}
+.volunteer-form{
+    border: 1px solid #000000;
+    height: 470px;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 90px;
+    border-radius: 20px;
+    padding: 50px;
+}
+.form-row {
+    display: flex;
+    gap: 35px;
+    width: 100%;
+  }
+  .input {
+    width: 400px;
+    height: 45px;
+    border: 1px solid #000000;
+  }
+.contact-submit{
+    width: 200px;
+    display: block;
+    margin-top: 30px !important;
+    margin: 0 auto;
+    
+}
+
+@media (max-width: 768px) {
+    .volunteer-heading-tag {
+        width: 90%;
+        margin-left: 5%;
+        
+    }
+
+    .volunteer-heading-tag h1 {
+        margin-top: 60px;
+        font-weight: 650;
+        font-size: 26px;
+    }
+    .volunteer-form {
+        width: 85%;
+        padding: 20px;
+        margin-top: 50px;
+        height: auto;
+      }
+    
+      .volunteer-form .form-row {
+        flex-direction: column;
+        gap: 15px;
+      }
+    
+      .volunteer-form .input {
+        width: 100%; /* Full width for smaller screens */
+        height: 40px;
+      }
+    
+      .contact-submit {
+        width: 100%; /* Full width button */
+        height: 45px;
+        font-size: 16px;
+      }
+}
+@media (min-width: 769px) and (max-width: 1200px) {
+    .volunteer-form {
+        width: 90%;
+        padding: 30px;
+      }
+    
+      .volunteer-form .form-row {
+        /* flex-direction: column; */
+        gap: 20px;
+      }
+    
+      .volunteer-form .input#contact-form_name, .volunteer-form .input#contact-form_email, .volunteer-form .input#contact-form_phone, .volunteer-form .input#contact-form_instagram, .volunteer-form .input#contact-form_phone, .volunteer-form .input#contact-form_parcel, .volunteer-form .input#contact-form_count, .volunteer-form .input#contact-form_total_amount {
+        width: 230px;
+    }
+    .volunteer-form .ant-picker.ant-picker-outlined.css-dev-only-do-not-override-7ny38l.input.datepicker{
+
+        width: 230px;
+       }
+}

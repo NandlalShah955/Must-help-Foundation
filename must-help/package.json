@@ -17,7 +17,8 @@
     "react-router-dom": "^6.28.1",
     "react-spring": "^9.7.5",
     "react-spring-carousel": "^2.0.19",
-    "styled-components": "^6.1.14"
+    "styled-components": "^6.1.14",
+    "swiper": "^11.2.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",

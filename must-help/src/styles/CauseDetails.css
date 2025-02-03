@@ -33,22 +33,40 @@
   width: 580px;
   font-family: Arial, sans-serif;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  height: 800px; 
+  margin-top: 0px;
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  -ms-overflow-style: none;
 }
-
-.form-row {
+.contact-poster{
+  width: 100%;
+  height: 580px;
+  margin-top: 50px;
+}
+.contact-poster img{
+  width: 100%;
+  height: 90%;
+  
+}
+.contact-poster h2{
+  text-align: center;
+  font-size: 26px;
+}
+.donation-form .form-row {
   display: flex;
   gap: 35px;
   width: 100%;
 }
 
-.input {
+.donation-form .input {
   width: 280px;
   height: 45px;
   border: 1px solid #000000;
 }
 
-.widerinput {
-  width: 560px;
+.donation-form .widerinput {
+  width: 595px;
   height: 45px;
   border: 1px solid #000000;
 
@@ -66,19 +84,97 @@
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
+  
+}
+.cause-carousel {
+  width: 100%;
+  height: 400px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  /* border: 1px solid red; */
 }
 
+.cause-slide {
+  display: flex;
+  width: 80%;
+  text-align: center;
+  background: #fef7e5;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid black;
+ 
+  /* gap: 10px; */
+  margin-right: 20px;
+}
+.cause-slide-text{
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  gap: -40px;
+}
+.cause-slide img {
+  width: 40%;
+  height: 100%;
+}
 .cause-details h2,
 .recommend-causes h2 {
   font-size: 1.5em;
   margin-bottom: 15px;
 }
 
-.cause-card {
+.second-carousel {
+  border-radius: 10px; /* Rounded corners */
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 15px;
-  margin-bottom: 15px;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  margin-top: 40px; 
+}
+.second-slider{
+  /* height: 50px; */
+  gap: 30px;
+}
+
+.second-carousel p {
+  margin: 5px 0;
+  font-weight: bold;
+}
+
+.second-carousel span {
+  display: block;
+  font-weight: normal;
+  color: #333;
+}
+
+.second-carousel strong {
+  font-weight: bold;
+}
+.cause-card-images {
+  display: grid;
+  width: 100%;
+  height: 300px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 10px;
+
+
+}
+
+.cause-card-images img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.cause-card-details {
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+}
+
+.cause-card-details p {
+  margin-top: 20px;
 }
 
 .cause-image {
@@ -111,27 +207,96 @@
 
   .cause-section {
     grid-template-columns: 1fr;
-    /* gap: 10px;
-        padding: 15px; */
+
   }
 
   .cause-details,
   /* .donation-form, */
   .recommend-causes {
-   margin-top: 20px;
-   width: 90%;
+    margin-top: 20px;
+    width: 90%;
   }
-  
-  .donation-form{
+
+  .donation-form {
     margin-top: 25px;
 
-        width: 87%;
-      }
-  .widerinput {
+    width: 87%;
+  }
+  .donation-form .input {
+    width: 100%;
+    height: 45px;
+    border: 1px solid #000000;
+  }
+  .donation-form .form-row {
+    display: flex;
+    gap: 5px;
+  }
+  .donation-form .widerinput {
     width: 100%;
     height: 40px;
     border: 1px solid #000000;
 
 
   }
+
+  .cause-details h2 {
+    font-weight: 650;
+    font-size: 20px;
+  }
+ .cause-slide{
+  width: 85%;
+ }
+  .cause-slide img {
+    width: 50%;
+    height: 90%;
+  }
+ 
+  .cause-slide-text h4{
+    margin-top: 10px;
+    font-size: 15px;
+  } 
+  .cause-slide-text p{
+    font-size: 12px;
+    margin-top: -10px;
+    
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  .cause-section {
+    grid-template-columns: 1fr;
+    /* 2 columns */
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .donation-form {
+    margin-top: 25px;
+    width: 94%;
+    overflow: none;
+  }
+
+  .cause-card-details h3,
+  .cause-card-details p {
+    margin-top: 150px;
+  }
+ 
+  .donation-form .input#contact-form_name,.donation-form .input#contact-form_email,.donation-form .input#contact-form_phone,.donation-form .input#contact-form_instagram,.donation-form .input#contact-form_phone,.donation-form .input#contact-form_parcel,.donation-form .input#contact-form_count,.donation-form .input#contact-form_total_amount{
+  width: 320px;
+ }
+ .donation-form .ant-picker.ant-picker-outlined.css-dev-only-do-not-override-7ny38l.input.datepicker{
+
+  width: 320px;
+ }
+ .donation-form .widerinput {
+    width: 680px;
+    height: 45px;
+    border: 1px solid #000000;
+  
+  
+  }
+.cause-slide{
+  width: 95%;
+  height: 300px;
+}
 }

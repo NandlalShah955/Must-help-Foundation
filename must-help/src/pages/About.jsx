@@ -72,7 +72,7 @@ const About = () => {
         <div className='team-intro'>
           <h1>Meet our team of Volunteers, Field Workers, and Technology Persons</h1>
           <p>Join MUST HELP FOUNDATION to help provide meals, essential items, educational support, medical aid, blankets for the needy, and tree planting events. Together, we can make a lasting impact on our community!.</p>
-          <Link to='/contact'>
+          <Link to='/volunteerform'>
             <button>
               JOIN OUR TEAM
             </button>

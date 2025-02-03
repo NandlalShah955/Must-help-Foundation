@@ -1,25 +1,91 @@
 import React, { useState, useEffect } from 'react';
+import { Swiper, SwiperSlide } from "swiper/react";
 import { useLocation } from 'react-router-dom';
-import { Form, Input, Button, Select, DatePicker } from "antd";
+import { Form, Input, Button, DatePicker } from "antd";
+import causesDetails from "../causedetails.js";
+import Feedhomelessposter from "../assets/Feedhomelessposter.png";
+import campaign1 from "../assets/campaign1.png";
+import campaign2 from "../assets/campaign2.png";
+import campaign3 from "../assets/campaign3.png";
+import "swiper/css";
+import "swiper/css/effect-cards";
+import { Autoplay } from "swiper/modules";
+
 
 import "../styles/CauseDetails.css";
 const extractPrice = (priceString) => {
-  const match = priceString.match(/\d+/); 
+  const match = priceString.match(/\d+/);
   return match ? parseInt(match[0], 10) : null;
 };
 const CauseDetails = () => {
   const location = useLocation();
-  const { cause,price } = location.state || {};
- 
+  const { cause, price } = location.state || {};
+
   const exactPrice = extractPrice(price);
-  console.log(cause,exactPrice ,"cause");
+  console.log(cause, exactPrice, "cause");
   const onFinish = (values) => {
-    // console.log("Form Data Submitted: ", values);
+
   };
 
   const onFinishFailed = (errorInfo) => {
-    // console.log("Form Submission Failed: ", errorInfo);
+
   };
+  const causes = [
+    {
+      image: campaign3,
+      title: "Educate a Child",
+      price: "Starting ₹800",
+    },
+    {
+      image: campaign1,
+      title: "Give a School Bag",
+      price: "₹500 / Bag",
+    },
+    {
+      image: campaign2,
+      title: "Feed a Homeless Person",
+      price: "₹25 / Person",
+    },
+    {
+      image: campaign3,
+      title: "Donate a Christmas Gift for Children",
+      price: "₹200 / Child",
+    },
+    {
+      image: campaign3,
+      title: "Donate A Hearing Aid",
+      price: "₹2500 / Kit",
+    },
+  ];
+  const donors = [
+    {
+      image: campaign3,
+      name: "Amit Sharma",
+      donation: "1000Rs"
+
+    },
+    {
+      image: campaign1,
+      name: "Suman Verma",
+      donation: "1000Rs"
+
+    },
+    {
+      image: campaign2,
+      name: "Krishna Swami",
+      donation: "3000Rs"
+    },
+    {
+      image: campaign3,
+      name: "Nitin Sharma",
+      donation: "400Rs"
+    },
+    {
+      image: campaign3,
+      name: "Ananya Verma",
+      donation: "1000Rs"
+    },
+  ];
   return (
     <>
       <div className='cause_main'>
@@ -34,9 +100,18 @@ const CauseDetails = () => {
           <div className="cause-details">
             <h2>Causes Details</h2>
             <div className="cause-card">
-              <img src="example-image.jpg" alt="Cause" className="cause-image" />
-              <h3>Educate a Child</h3>
-              <p>Starting ₹800</p>
+              <div className='cause-card-images'>
+                <img src={campaign1} alt="" />
+                <img src={campaign2} alt="" />
+                <img src={campaign3} alt="" />
+                <img src={campaign3} alt="" />
+              </div>
+              {/* <img src="example-image.jpg" alt="Cause" className="cause-image" /> */}
+              <div className='cause-card-details'>
+
+                <h3>Educate a Child</h3>
+                <p>Starting ₹800</p>
+              </div>
             </div>
             <p>
               Child Education Since December 2021, Thaagam Foundation’s Child
@@ -51,7 +126,7 @@ const CauseDetails = () => {
             <h2>{cause}</h2>
             <Form name="contact-form" layout="vertical" onFinish={onFinish} onFinishFailed={onFinishFailed}>
               <div className="form-row">
-                <Form.Item label="Donor Name" labelCol={{ className: "custom-label" }}  name="name" rules={[{ required: true, message: "Please enter your name!" }]}>
+                <Form.Item label="Donor Name" labelCol={{ className: "custom-label" }} name="name" rules={[{ required: true, message: "Please enter your name!" }]}>
                   <Input placeholder="Your Name" className="input" />
                 </Form.Item>
                 <Form.Item
@@ -68,7 +143,7 @@ const CauseDetails = () => {
               </div>
 
               <div className="form-row">
-              <Form.Item
+                <Form.Item
                   label="Count"
                   labelCol={{ className: "custom-label" }}
                   name="phone"
@@ -83,7 +158,7 @@ const CauseDetails = () => {
                   <Input placeholder="Your Phone" className='input' />
                 </Form.Item>
                 <Form.Item label="Service Date" labelCol={{ className: "custom-label" }} name="service_date" rules={[{ required: true, message: "Please select a date!" }]}>
-                  <DatePicker className="input"  />
+                  <DatePicker className="input datepicker" />
                 </Form.Item>
               </div>
 
@@ -115,24 +190,59 @@ const CauseDetails = () => {
                 </Button>
               </Form.Item>
             </Form>
+            <div className='contact-poster'>
+              <h2>Our Policy</h2>
+              <img src={Feedhomelessposter} alt="" />
+            </div>
           </div>
 
 
 
           {/* Recommend Causes */}
           <div className="recommend-causes">
-            <h2>Recommend Causes</h2>
-            <ul>
-              <li>Give a Pongal Kit ₹500 / Kit</li>
-              <li>Give a Grocery Kit ₹500 / Kit</li>
-              <li>Donate a Christmas Gift ₹200 / Child</li>
-              <li>Donate A Hearing Aid ₹2500 / Kit</li>
-              <li>Give a School Bag ₹500 / Bag</li>
-            </ul>
+            <h2>Recent Causes</h2>
+            <Swiper
+              direction="vertical"
+              loop={true}
+              autoplay={{ delay: 2000, disableOnInteraction: false }}
+              slidesPerView={4}
+              speed={1000}
+              className="cause-carousel"
+              modules={[Autoplay]}
+            >
+              {causes.map((cause, index) => (
+                <SwiperSlide key={index} className="cause-slide">
+                  <img src={cause.image} alt={cause.title} />
+                  <div className='cause-slide-text'>
+                    <h4>{cause.title}</h4>
+                    <p>{cause.price}</p>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+            <h2>Recent Donors</h2>
+            <Swiper
+              direction="vertical"
+              loop={true}
+              autoplay={{ delay: 1000, disableOnInteraction: false }}
+              slidesPerView={4}
+              speed={1000}
+              className="cause-carousel second-carousel"
+              modules={[Autoplay]}
+            >
+              {donors.map((donor, index) => (
+                <SwiperSlide key={index} className="cause-slide second-slider">
+                  <div>
+                    <strong>Name:</strong> <span>{donor.name}</span>
+                  </div>
+                  <div>
+                    <strong>Amount:</strong> <span>{donor.donation}</span>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
         </div>
-
-
       </div>
 
     </>

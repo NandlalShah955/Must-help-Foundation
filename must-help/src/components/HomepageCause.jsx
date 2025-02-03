@@ -8,11 +8,11 @@ import Surprisebox from "../assets/surprisebox.jpeg";
 import Warmblanket from "../assets/Donatewarmblanket.png";
 import Eduationkit from "../assets/educationkit.png";
 import TailorMachine from "../assets/Tailor_machine.jpg";
-import FeedStrayDogs from "../assets/feedstraydogs.jpeg";
+import DonateNapkin from "../assets/donatenapkin.jpeg"
 import DogFood from "../assets/Dog_food.jpeg"
 import MonthlyEduacation from "../assets/monthlyexam.jpg";
 import DonateSlippers from "../assets/donatesleepers.jpeg";
-import DonateNapkin from "../assets/donatenapkin.jpeg";
+// import DonateNapkin from "../assets/donatenapkin.jpeg";
 import ChildCarekit from "../assets/childcarekit.jpeg"
 import FeedCows from "../assets/Feedcows.jpeg";
 import DonatePlants from "../assets/plantatree.jpeg";

@@ -3,7 +3,14 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { useLocation } from 'react-router-dom';
 import { Form, Input, Button, DatePicker } from "antd";
 import causesDetails from "../causedetails.js";
-import Feedhomelessposter from "../assets/Feedhomelessposter.png";
+import Warmblanket from "../assets/Donatewarmblanket.png";
+import Eduationkit from "../assets/educationkit.png";
+import TailorMachine from "../assets/Tailor_machine.jpg";
+import DonateNapkin from "../assets/donatenapkin.jpeg"
+import MonthlyEduacation from "../assets/monthlyexam.jpg";
+import DonateSlippers from "../assets/donatesleepers.jpeg";
+import Vegthali from "../assets/Veg_thali.jpeg";
+import FeedCows from "../assets/Feedcows.jpeg";
 import campaign1 from "../assets/campaign1.png";
 import campaign2 from "../assets/campaign2.png";
 import campaign3 from "../assets/campaign3.png";
@@ -20,9 +27,16 @@ const extractPrice = (priceString) => {
 const CauseDetails = () => {
   const location = useLocation();
   const { cause, price } = location.state || {};
+  const [filteredData, setfilteredData] = useState([])
 
-  const exactPrice = extractPrice(price);
-  console.log(cause, exactPrice, "cause");
+  
+  useEffect(() => {
+    const filteredCause = causesDetails?.find(item => item.name === cause); 
+  // console.log('filteredCause', filteredCause)
+  setfilteredData(filteredCause)
+    
+  }, [])
+  
   const onFinish = (values) => {
 
   };
@@ -30,31 +44,42 @@ const CauseDetails = () => {
   const onFinishFailed = (errorInfo) => {
 
   };
+  console.log('filteredData', filteredData)
   const causes = [
     {
-      image: campaign3,
-      title: "Educate a Child",
-      price: "Starting ₹800",
+      image: Vegthali,
+      title: "Feed a Veg Thaali",
+      price: "Starting ₹120",
     },
     {
-      image: campaign1,
-      title: "Give a School Bag",
-      price: "₹500 / Bag",
+      image: Warmblanket,
+      title: "Donate a Warm Blanket",
+      price: "₹199 / Blanket",
     },
     {
-      image: campaign2,
-      title: "Feed a Homeless Person",
-      price: "₹25 / Person",
+      image: Eduationkit,
+      title: "Donate a Education kit",
+      price: "₹499 / per Kid",
     },
     {
-      image: campaign3,
-      title: "Donate a Christmas Gift for Children",
-      price: "₹200 / Child",
+      image: TailorMachine,
+      title: "Donate a Tailoring Machine",
+      price: "₹6000 / person",
     },
     {
-      image: campaign3,
-      title: "Donate A Hearing Aid",
-      price: "₹2500 / Kit",
+      image: DonateNapkin,
+      title: "Donate A Stayfree Pad",
+      price: "₹39 / Napkin",
+    },
+    {
+      image: MonthlyEduacation,
+      title: "Sponser a kid Monthly Education",
+      price: "₹699 / Kit",
+    },
+    {
+      image: DonateSlippers,
+      title: "Donate Slippers to kid",
+      price: "₹99 / Slippers",
     },
   ];
   const donors = [
@@ -92,7 +117,6 @@ const CauseDetails = () => {
         <div className='cause-heading-tag'>
           <div>
             <h1>{cause}</h1>
-
           </div>
         </div>
         <div className="cause-section">
@@ -101,22 +125,19 @@ const CauseDetails = () => {
             <h2>Causes Details</h2>
             <div className="cause-card">
               <div className='cause-card-images'>
-                <img src={campaign1} alt="" />
-                <img src={campaign2} alt="" />
-                <img src={campaign3} alt="" />
-                <img src={campaign3} alt="" />
+                <img src={filteredData.image1} alt="" />
+                <img src={filteredData.image2} alt="" />
+                <img src={filteredData.image3} alt="" />
+                <img src={filteredData.image4} alt="" />
+                
               </div>
-              {/* <img src="example-image.jpg" alt="Cause" className="cause-image" /> */}
               <div className='cause-card-details'>
-
-                <h3>Educate a Child</h3>
-                <p>Starting ₹800</p>
+                <h3>{filteredData.name}</h3>
+                <p>Starting ₹{filteredData.price}</p>
               </div>
             </div>
             <p>
-              Child Education Since December 2021, Thaagam Foundation’s Child
-              Education program has been a vital support system for economically
-              disadvantaged children...
+             {filteredData.description}
             </p>
           </div>
 
@@ -192,7 +213,7 @@ const CauseDetails = () => {
             </Form>
             <div className='contact-poster'>
               <h2>Our Policy</h2>
-              <img src={Feedhomelessposter} alt="" />
+              <img src={filteredData.form_image} alt="" />
             </div>
           </div>
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import "../styles/About.css";
 import { Link } from 'react-router-dom';
+import Cakecutting4 from "../assets/cakecutting4.jpeg";
 const About = () => {
   const galleryData = [
     { image: "https://balloon-mahal.netlify.app/assets/img/Aman.JPG", name: "Mr.Aman Poddar  ", role: "CEO & Founder" },
@@ -28,7 +29,7 @@ const About = () => {
 
       <div className='about-div'>
         <div>
-          <img src="https://thaagamorg-eb-s3.s3.amazonaws.com/static/website/assets/images/about/about.webp" alt="" />
+          <img src={Cakecutting4} alt="Cake_cuttingimage" />
         </div>
         <div>
           <h1 className='maintext'>

@@ -12,7 +12,6 @@ import DonateNapkin from "../assets/donatenapkin.jpeg"
 import DogFood from "../assets/Dog_food.jpeg"
 import MonthlyEduacation from "../assets/monthlyexam.jpg";
 import DonateSlippers from "../assets/donatesleepers.jpeg";
-// import DonateNapkin from "../assets/donatenapkin.jpeg";
 import ChildCarekit from "../assets/childcarekit.jpeg"
 import FeedCows from "../assets/Feedcows.jpeg";
 import DonatePlants from "../assets/plantatree.jpeg";
@@ -36,7 +35,7 @@ const HomepageCause = () => {
     { image: DonateSlippers, title: 'Donate Slippers to kid', price: '99/- for each' },
     { image: DonateNapkin, title: 'Donate Napkin', price: '39/- per women' },
     { image: ChildCarekit, title: 'Donate a Child Care kit', price: '99/- per kit ' },
-    { image: FeedCows, title: 'Feed Cows', price: '25/- per cow' },
+    { image: FeedCows, title: 'Feed Cows', price: '40/- per cow' },
     { image: DonatePlants, title: 'Donate for plants', price: '49/- per plant' },
     { image: Milkandbanana, title: 'Donate Milk & 2 Banana', price: '30/- per child' },
     { image: GiftSchoolbag, title: 'Gift a School Bag', price: '499/- per kid' },

@@ -2,7 +2,7 @@ import React from 'react';
 import "../styles/Homepage.css";
 import HomepageCause from '../components/HomepageCause';
 import ImageScroll from "../components/ImageScroll";
-import Homepagevideo from "../assets/video.mp4";
+import Video from "../assets/Main_video.mp4";
 import { Link } from 'react-router-dom';
 
 const Homepage = () => {
@@ -10,7 +10,7 @@ const Homepage = () => {
         <>
             <div className="homepage">
                 <video
-                    src={Homepagevideo}
+                    src={Video}
                     autoPlay
                     loop
                     muted

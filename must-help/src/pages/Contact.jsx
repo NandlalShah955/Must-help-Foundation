@@ -3,12 +3,25 @@ import "../styles/Contact.css"
 import { Form, Input, Button, Checkbox } from "antd";
 const Contact = () => {
   const onFinish = (values) => {
-    // console.log("Form Data Submitted: ", values);
+    const { name, email, phone, address, description } = values;
+   console.log('name,email,phone,address', name,email,phone,address) ;
+
+    const message = `Name: ${name}%0AEmail: ${email}%0APhone: ${phone}%0AAddress: ${address}%0ACase Description: ${description}`;
+    const whatsappNumber = "918448674560"; 
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
+
+    window.location.href = whatsappURL; 
   };
 
   const onFinishFailed = (errorInfo) => {
-    // console.log("Form Submission Failed: ", errorInfo);
-  };
+    if(!name, !email,!phone, !address, !description){
+      alert('Please fill all the details')
+    }else{
+
+      alert(errorInfo);
+    }
+    
+  }
 
   return (
     <div className='contact-main'>

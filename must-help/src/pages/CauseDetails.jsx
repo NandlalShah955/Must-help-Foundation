@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
-import { useLocation } from 'react-router-dom';
+import { useLocation ,useNavigate} from 'react-router-dom';
 import { Form, Input, Button, DatePicker } from "antd";
 import causesDetails from "../causedetails.js";
 import Warmblanket from "../assets/Donatewarmblanket.png";
@@ -10,14 +10,14 @@ import DonateNapkin from "../assets/donatenapkin.jpeg"
 import MonthlyEduacation from "../assets/monthlyexam.jpg";
 import DonateSlippers from "../assets/donatesleepers.jpeg";
 import Vegthali from "../assets/Veg_thali.jpeg";
-import FeedCows from "../assets/Feedcows.jpeg";
+import CommanformImage from "../assets/comman_form_video_image.jpeg";
 import campaign1 from "../assets/campaign1.png";
 import campaign2 from "../assets/campaign2.png";
 import campaign3 from "../assets/campaign3.png";
+import moment from 'moment';
 import "swiper/css";
 import "swiper/css/effect-cards";
 import { Autoplay } from "swiper/modules";
-
 
 import "../styles/CauseDetails.css";
 const extractPrice = (priceString) => {
@@ -26,25 +26,106 @@ const extractPrice = (priceString) => {
 };
 const CauseDetails = () => {
   const location = useLocation();
+  const navigate=useNavigate();
   const { cause, price } = location.state || {};
-  const [filteredData, setfilteredData] = useState([])
+  const [count, setCount] = useState(2);
+  const [totalAmount, setTotalAmount] = useState(0);
+  const [filteredData, setFilteredData] = useState([]);
+  const [isCheckboxChecked, setIsCheckboxChecked] = useState(false);
+  const [isChecked, setIsChecked] = useState(false);
+  const [form] = Form.useForm();
 
-  
   useEffect(() => {
-    const filteredCause = causesDetails?.find(item => item.name === cause); 
-  // console.log('filteredCause', filteredCause)
-  setfilteredData(filteredCause)
-    
-  }, [])
-  
+    const filteredCause = causesDetails?.find(item => item.name === cause);
+    setFilteredData(filteredCause);
+
+    const finalPrice = extractPrice(price);
+
+    if (finalPrice) {
+      const calculatedAmount = count * finalPrice;
+      setTotalAmount(calculatedAmount);
+
+      form.setFieldsValue({
+        total_amount: calculatedAmount,
+        total_donation: calculatedAmount,
+        count,
+
+      });
+    }
+  }, [price, cause, count, form]);
+  const handleChange = (e) => {
+    let value = Number(e.target.value);
+    setCount(value);
+
+    const finalPrice = extractPrice(price);
+    if (finalPrice) {
+      const calculatedAmount = value * finalPrice;
+      setTotalAmount(calculatedAmount);
+
+      form.setFieldsValue({
+        total_amount: calculatedAmount,
+        total_donation: calculatedAmount,
+        count: value,
+
+      });
+    }
+  };
+   const handleCountChange=(e)=>{
+    let value = Number(e.target.value);
+
+  const finalPrice = extractPrice(price);
+  if (finalPrice) {
+    const adjustedCount = value / finalPrice;
+    setCount(adjustedCount);
+
+    form.setFieldsValue({
+      count: adjustedCount,
+      total_amount: adjustedCount * finalPrice,
+      total_donation: adjustedCount * finalPrice,
+    });
+  }
+   }
+ 
+  const handleCheckboxChange = (e) => {
+    const checked = e.target.checked;
+    setIsCheckboxChecked(checked);
+
+    if (checked) {
+      const finalPrice = extractPrice(price);
+      if (finalPrice) {
+        if (checked && totalAmount < 2500) {
+          const minCount = Math.ceil(2500 / finalPrice);
+          const newTotal = minCount * finalPrice;
+
+          setCount(minCount);
+          setTotalAmount(newTotal);
+
+          form.setFieldsValue({
+            total_amount: newTotal,
+            total_donation: newTotal,
+            count: minCount,
+          });
+        }
+      }
+    }
+  };
+  const handleImageCheckboxChange = (e) => {
+    setIsChecked(e.target.checked);
+  };
   const onFinish = (values) => {
+    const formData = {
+      ...values,
+      I_want_image: isChecked ? 'yes' : 'no',
+    };
+    localStorage.setItem('formData', JSON.stringify(formData));
+    navigate('/payment')
 
   };
 
   const onFinishFailed = (errorInfo) => {
 
   };
-  console.log('filteredData', filteredData)
+
   const causes = [
     {
       image: Vegthali,
@@ -125,11 +206,11 @@ const CauseDetails = () => {
             <h2>Causes Details</h2>
             <div className="cause-card">
               <div className='cause-card-images'>
-                <img src={filteredData.image1} alt="" />
-                <img src={filteredData.image2} alt="" />
-                <img src={filteredData.image3} alt="" />
-                <img src={filteredData.image4} alt="" />
-                
+                <img src={filteredData.image1} alt="cause_image" />
+                <img src={filteredData.image2} alt="cause_image" />
+                <img src={filteredData.image3} alt="cause_image" />
+                <img src={filteredData.image4} alt="cause_image" />
+
               </div>
               <div className='cause-card-details'>
                 <h3>{filteredData.name}</h3>
@@ -137,7 +218,7 @@ const CauseDetails = () => {
               </div>
             </div>
             <p>
-             {filteredData.description}
+              {filteredData.description}
             </p>
           </div>
 
@@ -145,7 +226,7 @@ const CauseDetails = () => {
 
           <div className="donation-form">
             <h2>{cause}</h2>
-            <Form name="contact-form" layout="vertical" onFinish={onFinish} onFinishFailed={onFinishFailed}>
+            <Form form={form} initialValues={{ count: 2 }} name="contact-form" layout="vertical" onFinish={onFinish} onFinishFailed={onFinishFailed}>
               <div className="form-row">
                 <Form.Item label="Donor Name" labelCol={{ className: "custom-label" }} name="name" rules={[{ required: true, message: "Please enter your name!" }]}>
                   <Input placeholder="Your Name" className="causedetailsinput" />
@@ -165,7 +246,7 @@ const CauseDetails = () => {
 
               <div className="form-row">
                 <Form.Item
-                  label="Count"
+                  label="Whatsapp Number"
                   labelCol={{ className: "custom-label" }}
                   name="phone"
                   rules={[
@@ -179,7 +260,12 @@ const CauseDetails = () => {
                   <Input placeholder="Your Phone" className='causedetailsinput' />
                 </Form.Item>
                 <Form.Item label="Service Date" labelCol={{ className: "custom-label" }} name="service_date" rules={[{ required: true, message: "Please select a date!" }]}>
-                  <DatePicker className="causedetailsinput datepicker" />
+                  <DatePicker
+                    className="causedetailsinput datepicker"
+                    disabledDate={(current) => {
+                      return current && (current.valueOf() <= moment().valueOf());
+                    }}
+                  />
                 </Form.Item>
               </div>
 
@@ -193,24 +279,54 @@ const CauseDetails = () => {
               </div>
 
               <div className="form-row">
-                <Form.Item label="Count" name="count" labelCol={{ className: "custom-label" }} rules={[{ required: true, message: "Please enter a count!" }]}>
-                  <Input type="number" min={1} placeholder="Count" className="causedetailsinput" />
+                <Form.Item label="Food Count" name="count" labelCol={{ className: "custom-label" }}>
+                  <Input
+                    type="number"
+                    min={1}
+                    value={count}
+                    onChange={handleChange}
+                    placeholder="Count"
+                    className="causedetailsinput"
+                  />
                 </Form.Item>
-                <Form.Item label="Total Amount" name="total_amount" labelCol={{ className: "custom-label" }} rules={[{ required: true, message: "Please enter the total amount!" }]}>
-                  <Input type="number" min={0} placeholder="Total Amount" className="causedetailsinput" />
+                <Form.Item label="Total Amount" onChange={handleCountChange} name="total_amount" labelCol={{ className: "custom-label" }}>
+                  <Input type="number" min={0} className="causedetailsinput" />
                 </Form.Item>
               </div>
 
-              <Form.Item label="Total Donation" labelCol={{ className: "custom-label" }} name="total_donation" >
-                <Input placeholder="Your Message" className="widerinput" />
+              <Form.Item label="Total Donation" onChange={handleCountChange} name="total_donation" labelCol={{ className: "custom-label" }}>
+                <Input type="number" min={0} className="causedetailsinput" />
               </Form.Item>
+
+              <h2>Packages</h2>
+              <div className="form-image-checkbox">
+                <div className="form-image-checkbox-image">
+                  <label className="image-checkbox">
+                    <input type="checkbox" onChange={handleImageCheckboxChange} />
+                    <span className="custom-checkbox"></span>
+                    <img src={filteredData.form_checkbox} alt="form_image" />
+                  </label>
+                  <p>Price: Free of cost</p>
+                </div>
+
+                <div className="form-image-checkbox-image">
+                  <label className="image-checkbox">
+                    <input type="checkbox" checked={isCheckboxChecked} onChange={handleCheckboxChange} />
+                    <span className="custom-checkbox"></span>
+                    <img src={CommanformImage} alt="form_image" />
+                  </label>
+                  <p>Price: Rs2500</p>
+                </div>
+              </div>
+
 
               <Form.Item>
                 <Button type="primary" htmlType="submit" block className="contact-submit">
-                  Submit Now
+                  Donate Now
                 </Button>
               </Form.Item>
             </Form>
+
             <div className='contact-poster'>
               <h2>Our Policy</h2>
               <img src={filteredData.form_image} alt="" />

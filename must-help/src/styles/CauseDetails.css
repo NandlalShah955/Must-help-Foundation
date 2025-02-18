@@ -22,6 +22,7 @@
   grid-template-columns: 1fr 2fr 1fr;
   padding: 20px;
   background-color: #fef7e5;
+  height: auto;
 }
 
 
@@ -33,26 +34,31 @@
   width: 580px;
   font-family: Arial, sans-serif;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  overflow-y: auto;
-  height: 800px; 
+  /* overflow-y: auto; */
+  height: auto;
   margin-top: 0px;
-  scrollbar-width: none; /* Hide scrollbar for Firefox */
-  -ms-overflow-style: none;
+  /* scrollbar-width: none; */
+  /* Hide scrollbar for Firefox */
+  /* -ms-overflow-style: none; */
 }
-.contact-poster{
+
+.contact-poster {
   width: 100%;
   height: 580px;
   margin-top: 50px;
 }
-.contact-poster img{
+
+.contact-poster img {
   width: 100%;
   height: 90%;
-  
+
 }
-.contact-poster h2{
+
+.contact-poster h2 {
   text-align: center;
   font-size: 26px;
 }
+
 .donation-form .form-row {
   display: flex;
   gap: 35px;
@@ -84,8 +90,9 @@
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  
+
 }
+
 .cause-carousel {
   width: 100%;
   height: 400px;
@@ -102,20 +109,23 @@
   padding: 20px;
   border-radius: 10px;
   border: 1px solid black;
- 
+
   /* gap: 10px; */
   margin-right: 20px;
 }
-.cause-slide-text{
+
+.cause-slide-text {
   display: flex;
   flex-direction: column;
   width: 60%;
   gap: -40px;
 }
+
 .cause-slide img {
   width: 40%;
   height: 100%;
 }
+
 .cause-details h2,
 .recommend-causes h2 {
   font-size: 1.5em;
@@ -123,15 +133,17 @@
 }
 
 .second-carousel {
-  border-radius: 10px; /* Rounded corners */
+  border-radius: 10px;
+  /* Rounded corners */
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-family: Arial, sans-serif;
   font-size: 20px;
-  margin-top: 40px; 
+  margin-top: 40px;
 }
-.second-slider{
+
+.second-slider {
   /* height: 50px; */
   gap: 30px;
 }
@@ -150,6 +162,7 @@
 .second-carousel strong {
   font-weight: bold;
 }
+
 .cause-card-images {
   display: grid;
   width: 100%;
@@ -193,6 +206,86 @@
   margin-bottom: 10px;
 }
 
+.form-image-checkbox {
+  height: 200px;
+  display: flex;
+  margin: 10px;
+  justify-content: center;
+}
+
+.form-image-checkbox-image {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.image-checkbox {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.image-checkbox input {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  opacity: 0;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.custom-checkbox {
+  position: absolute;
+  top: 3px;
+  right: 60px;
+  width: 15px;
+  height: 15px;
+  background: white;
+  border-radius: 50%;
+  border: 2px solid gray;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.image-checkbox input:checked+.custom-checkbox {
+  background: blue;
+  border-color: blue;
+}
+
+.image-checkbox input:checked+.custom-checkbox::after {
+  content: "✔";
+  color: white;
+  font-size: 11px;
+  font-weight: bold;
+  position: absolute;
+  /* bottom: 2px; */
+  left: 0px;
+}
+
+.image-checkbox img {
+  width: 60%;
+  height: 70%;
+  border-radius: 7px;
+  margin: 0 auto;
+}
+
+.form-image-checkbox-image p {
+  margin-top: -65px;
+  font-size: 17px;
+  color: gray;
+}
+
+.image-uploader {
+  /* border: 1px solid red; */
+  margin-top: 50px;
+}
+
 @media (max-width: 768px) {
   .cause-heading-tag {
     width: 60%;
@@ -222,16 +315,20 @@
 
     width: 87%;
   }
+
   .donation-form .causedetailsinput {
     width: 100%;
     height: 45px;
     border: 1px solid #000000;
+    color: #000000;
   }
+
   .donation-form .form-row {
     display: flex;
     flex-direction: column;
     gap: 5px;
   }
+
   .donation-form .widerinput {
     width: 100%;
     height: 40px;
@@ -244,22 +341,55 @@
     font-weight: 650;
     font-size: 20px;
   }
- .cause-slide{
-  width: 85%;
- }
+
+  .cause-slide {
+    width: 85%;
+  }
+
   .cause-slide img {
     width: 50%;
     height: 90%;
   }
- 
-  .cause-slide-text h4{
+
+  .cause-slide-text h4 {
     margin-top: 10px;
     font-size: 15px;
-  } 
-  .cause-slide-text p{
+  }
+
+  .cause-slide-text p {
     font-size: 12px;
     margin-top: -10px;
-    
+
+  }
+
+  .form-image-checkbox {
+    margin: 5px;
+  }
+
+  .form-image-checkbox-image {
+    width: 70%;
+    height: 100%;
+    padding: 5px
+  }
+
+  .image-checkbox img {
+    width: 90%;
+    height: 80%;
+    border-radius: 7px;
+    margin: 0 auto;
+  }
+
+  .form-image-checkbox-image p {
+    margin-top: -17px;
+    font-size: 16px;
+
+  }
+
+  .custom-checkbox {
+    right: 10px;
+    width: 15px;
+    height: 15px;
+
   }
 }
 
@@ -281,26 +411,65 @@
   .cause-card-details p {
     margin-top: 150px;
   }
- 
-  .donation-form .causedetailsinput#contact-form_name,.donation-form .causedetailsinput#contact-form_email,.donation-form .causedetailsinput#contact-form_phone,.donation-form .causedetailsinput#contact-form_instagram,.donation-form .causedetailsinput#contact-form_phone,.donation-form .causedetailsinput#contact-form_parcel,.donation-form .causedetailsinput#contact-form_count,.donation-form .causedetailsinput#contact-form_total_amount{
-  width: 400px;
- }
- /* .donation-form .input{
+
+  .donation-form .causedetailsinput#contact-form_name,
+  .donation-form .causedetailsinput#contact-form_email,
+  .donation-form .causedetailsinput#contact-form_phone,
+  .donation-form .causedetailsinput#contact-form_instagram,
+  .donation-form .causedetailsinput#contact-form_phone,
+  .donation-form .causedetailsinput#contact-form_parcel,
+  .donation-form .causedetailsinput#contact-form_count,
+  .donation-form .causedetailsinput#contact-form_total_amount {
+    width: 400px;
+  }
+
+  /* .donation-form .input{
   width: 500px;
 }  */
- .donation-form .ant-picker.ant-picker-outlined.css-dev-only-do-not-override-7ny38l.causedetailsinput.datepicker{
+  .donation-form .ant-picker.ant-picker-outlined.css-dev-only-do-not-override-7ny38l.causedetailsinput.datepicker {
 
-  width: 400px;
- }
- .donation-form .widerinput {
+    width: 400px;
+  }
+
+  .donation-form .widerinput {
     width: 835px;
     height: 45px;
     border: 1px solid #000000;
-  
-  
+
+
   }
-.cause-slide{
-  width: 95%;
-  height: 300px;
-}
+
+  .cause-slide {
+    width: 95%;
+    height: 300px;
+  }
+  .form-image-checkbox{
+
+    margin-bottom: 200px;
+  }
+
+  .form-image-checkbox-image {
+    width: 70%;
+    height: 400px;
+    padding: 5px;
+
+  }
+  .form-image-checkbox-image img{
+    height: 80%;
+    width: 70%;
+  }
+
+  .form-image-checkbox-image p {
+    font-size: 20px;
+
+  }
+
+  .custom-checkbox {
+    right: 70px;
+    width: 20px;
+    height: 20px;
+
+  }
+
+ 
 }

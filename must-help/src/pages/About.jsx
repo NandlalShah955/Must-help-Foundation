@@ -1,21 +1,21 @@
 import React from 'react';
 import "../styles/About.css";
 import { Link } from 'react-router-dom';
-import Cakecutting4 from "../assets/cakecutting4.jpeg";
+import Cakecutting4 from "../assets/cakecutting4.jpeg"; 
+import CEO from "../assets/CEO_Founder.jpeg";
+import MD from "../assets/Managing_Director.jpeg";
 const About = () => {
   const galleryData = [
-    { image: "https://balloon-mahal.netlify.app/assets/img/Aman.JPG", name: "Mr.Aman Poddar  ", role: "CEO & Founder" },
-    { image: "https://thaagamorg-eb-s3.s3.amazonaws.com/static/website/assets/images/about/charles_sir.webp", name: "Mr.Rana Poddar  ", role: "Managing Director" },
-    { image: "https://thaagamorg-eb-s3.s3.amazonaws.com/static/website/images/recent-posts/Homeless/CHILD_2.webp",  },
-    { image: "https://thaagamorg-eb-s3.s3.amazonaws.com/static/website/images/recent-posts/Homeless/CHILD_2.webp",  },
-    { image: "https://thaagamorg-eb-s3.s3.amazonaws.com/static/website/images/recent-posts/Homeless/CHILD_2.webp",  },
-    { image: "https://thaagamorg-eb-s3.s3.amazonaws.com/static/website/images/recent-posts/Homeless/CHILD_2.webp",  },
+    { image: CEO, name: "Mr.Aman Poddar  ", role: "CEO & Founder" },
+    { image: MD, name: "Mr.Rana Poddar  ", role: "Managing Director" },
+    { image: "https://musthelp.foundation/assets/cakecutting2-CZELHo5V.jpeg",  },
+    { image: "https://musthelp.foundation/assets/milkandbanana-C4Uyazmq.jpeg",  },
 
   ]
   return (
     <div className='about-main'>
       <div className='about-heading-tag'>
-        <h1>Together We can Make a Difference.<br />Join Thaagam Foundation. </h1>
+        <h1>Together We can Make a Difference.<br />Join Must Help Foundation. </h1>
         <h1>20000+
           <br />
           Meals
@@ -36,15 +36,16 @@ const About = () => {
             Your Impact Begins with Must Help Foundation
           </h1>
           <p className='paratext'>
-            At Must Help Foundation, we're committed to creating a meaningful and lasting impact that transcends the ordinary. Our passion for humanitarian aid, community empowerment, and individual dignity drives our mission. Our initiatives are carefully crafted to address immediate needs and foster sustainable development.
+          At Must Help Foundation, we are dedicated to making a real, lasting difference. Our mission is driven by a passion for helping communities, empowering people, and upholding human dignity.
+We focus on both immediate needs and long-term solutions to create sustainable change.
           </p>
           <p className='paratext'>
-            In addition to our extensive programs, we're equally devoted to ensuring your involvement is impactful and fulfilling. Our platform is designed with your convenience in mind, offering secure donations and a responsive support team to assist you every step of the way
+          We also make it easy for you to get involved. Our platform offers secure donations and a supportive team ready to assist you every step of the way. 
 
           </p>
           <div className='about-founder'>
             <div className='about-founder-image'>
-              <img src="https://balloon-mahal.netlify.app/assets/img/Aman.JPG" alt="" />
+              <img src={CEO} alt="CEO_Image" />
 
             </div>
             <div>

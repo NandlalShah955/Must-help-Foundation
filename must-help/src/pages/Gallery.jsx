@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import "../styles/Gallery.css";
 import Foodimage1 from "../assets/foodimage1.jpeg";
 import Foodimage2 from "../assets/foodimage2.jpeg";
@@ -54,6 +54,9 @@ const Gallery = () => {
     { image: Educationkit4, filter: "HOMELESS  ", desc: "Support for Homeless individuals" },
     { image: bananamilk4, filter: "HOMELESS  ", desc: "Support for Homeless individuals" },
   ]
+   useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
   return (
     <div className='gallery_main'>
       <div className='gallery-heading-tag'>

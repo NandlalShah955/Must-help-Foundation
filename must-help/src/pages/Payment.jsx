@@ -1,11 +1,13 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import "../styles/Payment.css";
 import PaymentImage from "../assets/Payment_scanner.jpeg";
 
 const Payment = () => {
-  const handleSubmit=()=>{
+   useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
+    const handleSubmit=()=>{
     const data=JSON.parse(localStorage.getItem("formData"));
-    console.log(data,"data");
     if (!data) {
         alert("No data found!");
         return;

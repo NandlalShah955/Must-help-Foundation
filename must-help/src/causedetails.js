@@ -102,6 +102,7 @@ import bananamilkform from "./assets/bananamilk_form.jpeg";
 // bag 
 import bag1 from "./assets/bag1.jpeg";
 import bag2 from "./assets/bag2.jpeg";
+import bag3 from "./assets/Giftschoolbag.jpeg";
 import bagform from "./assets/bag_form.jpeg";
 
 // Wheel Chair 
@@ -291,8 +292,10 @@ const causesDetails = [
     {
         name: "Gift a School Bag",
         price: "499",
-        image1: bag1,
+        image1: Bagposter,
         image2: bag2,
+        image3: bag3,
+        image4: bag1,
         description: "Gift a School Bag to Poor Kids: Empower Their EducationA school bag is more than just a backpack—it’s a symbol of hope and opportunity for underprivileged children. By donating school bags, you equip kids with the essentials they need to succeed in school, such as books, notebooks, and stationery.",
         form_checkbox:bagform,
         form_image:Bagposter

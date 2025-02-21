@@ -145,7 +145,12 @@
 
 .second-slider {
   /* height: 50px; */
-  gap: 30px;
+  gap: 60px;
+}
+.second-slider div{
+  /* height: 50px; */
+  margin-top: 35px;
+  font-size: 17px;
 }
 
 .second-carousel p {

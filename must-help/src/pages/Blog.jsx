@@ -1,8 +1,12 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import "../styles/Blog.css";
 import Banner from "../assets/FeedBanner.png";
 import Campaign1 from "../assets/campaign1.png";
 const Blog = () => {
+   useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
+  
   return (
     <div className='blog-main'>
 

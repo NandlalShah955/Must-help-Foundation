@@ -1,11 +1,15 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import "../styles/VolunteerForm.css";
 import { Form, Input, Button, DatePicker } from "antd";
 
 const VolunteerForm = () => {
+   useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
+  
   const onFinish = (values) => {
     const { name, phone, email, gender, dob, bloodGroup, street, city, bloodDonor, volunteerType } = values;
-console.log('first', name, phone, email, gender, dob, bloodGroup, street, city, bloodDonor, volunteerType)
+
     const message = `I want to join Must Help Foundation%0A%0A
     Name: ${name}%0A
     Email: ${email}%0A
@@ -25,9 +29,7 @@ console.log('first', name, phone, email, gender, dob, bloodGroup, street, city, 
   };
 
   const onFinishFailed = (errorInfo) => {
-    
-      alert('Please fill all the details')
-   
+      alert('Please fill all the details');
   };
   return (
     <div className='volunteer-main'>

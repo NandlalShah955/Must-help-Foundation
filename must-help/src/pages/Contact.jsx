@@ -1,10 +1,14 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import "../styles/Contact.css"
 import { Form, Input, Button, Checkbox } from "antd";
 const Contact = () => {
+  useEffect(() => {
+     window.scrollTo(0, 0);
+   }, []);
+ 
   const onFinish = (values) => {
     const { name, email, phone, address, description } = values;
-   console.log('name,email,phone,address', name,email,phone,address) ;
+   
 
     const message = `Name: ${name}%0AEmail: ${email}%0APhone: ${phone}%0AAddress: ${address}%0ACase Description: ${description}`;
     const whatsappNumber = "918448674560"; 

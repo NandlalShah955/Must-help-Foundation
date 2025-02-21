@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import "../styles/Homepage.css";
 import HomepageCause from '../components/HomepageCause';
 import ImageScroll from "../components/ImageScroll";
 import Video from "../assets/Main_video.mp4";
+import DonationSlider from "../components/DonationSlider";
 import { Link } from 'react-router-dom';
 
 const Homepage = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     return (
         <>
             <div className="homepage">
@@ -17,6 +21,7 @@ const Homepage = () => {
                     playsInline
                     className="background-video"
                 />
+                <DonationSlider />
             </div>
             <HomepageCause />
 

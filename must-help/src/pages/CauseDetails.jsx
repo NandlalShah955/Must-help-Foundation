@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
-import { useLocation ,useNavigate} from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Form, Input, Button, DatePicker } from "antd";
 import causesDetails from "../causedetails.js";
 import Warmblanket from "../assets/Donatewarmblanket.png";
@@ -11,9 +11,6 @@ import MonthlyEduacation from "../assets/monthlyexam.jpg";
 import DonateSlippers from "../assets/donatesleepers.jpeg";
 import Vegthali from "../assets/Veg_thali.jpeg";
 import CommanformImage from "../assets/comman_form_video_image.jpeg";
-import campaign1 from "../assets/campaign1.png";
-import campaign2 from "../assets/campaign2.png";
-import campaign3 from "../assets/campaign3.png";
 import moment from 'moment';
 import "swiper/css";
 import "swiper/css/effect-cards";
@@ -26,7 +23,7 @@ const extractPrice = (priceString) => {
 };
 const CauseDetails = () => {
   const location = useLocation();
-  const navigate=useNavigate();
+  const navigate = useNavigate();
   const { cause, price } = location.state || {};
   const [count, setCount] = useState(2);
   const [totalAmount, setTotalAmount] = useState(0);
@@ -34,7 +31,9 @@ const CauseDetails = () => {
   const [isCheckboxChecked, setIsCheckboxChecked] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
   const [form] = Form.useForm();
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   useEffect(() => {
     const filteredCause = causesDetails?.find(item => item.name === cause);
     setFilteredData(filteredCause);
@@ -47,7 +46,7 @@ const CauseDetails = () => {
 
       form.setFieldsValue({
         total_amount: calculatedAmount,
-        total_donation: calculatedAmount,
+        // total_donation: calculatedAmount,
         count,
 
       });
@@ -64,28 +63,28 @@ const CauseDetails = () => {
 
       form.setFieldsValue({
         total_amount: calculatedAmount,
-        total_donation: calculatedAmount,
+        // total_donation: calculatedAmount,
         count: value,
 
       });
     }
   };
-   const handleCountChange=(e)=>{
+  const handleCountChange = (e) => {
     let value = Number(e.target.value);
 
-  const finalPrice = extractPrice(price);
-  if (finalPrice) {
-    const adjustedCount = value / finalPrice;
-    setCount(adjustedCount);
+    const finalPrice = extractPrice(price);
+    if (finalPrice) {
+      const adjustedCount = value / finalPrice;
+      setCount(adjustedCount);
 
-    form.setFieldsValue({
-      count: adjustedCount,
-      total_amount: adjustedCount * finalPrice,
-      total_donation: adjustedCount * finalPrice,
-    });
+      form.setFieldsValue({
+        count: adjustedCount,
+        total_amount: adjustedCount * finalPrice,
+        // total_donation: adjustedCount * finalPrice,
+      });
+    }
   }
-   }
- 
+
   const handleCheckboxChange = (e) => {
     const checked = e.target.checked;
     setIsCheckboxChecked(checked);
@@ -102,7 +101,7 @@ const CauseDetails = () => {
 
           form.setFieldsValue({
             total_amount: newTotal,
-            total_donation: newTotal,
+            // total_donation: newTotal,
             count: minCount,
           });
         }
@@ -165,31 +164,206 @@ const CauseDetails = () => {
   ];
   const donors = [
     {
-      image: campaign3,
       name: "Amit Sharma",
       donation: "1000Rs"
 
     },
     {
-      image: campaign1,
       name: "Suman Verma",
       donation: "1000Rs"
 
     },
     {
-      image: campaign2,
       name: "Krishna Swami",
       donation: "3000Rs"
     },
     {
-      image: campaign3,
       name: "Nitin Sharma",
       donation: "400Rs"
     },
     {
-      image: campaign3,
       name: "Ananya Verma",
       donation: "1000Rs"
+    },
+    {
+      name: "BANKA PCR",
+      donation: "250Rs"
+    },
+    {
+      name: "Sunit ghai",
+      donation: "4000Rs"
+    },
+    {
+      name: "Satish",
+      donation: "350Rs"
+    },
+    {
+      name: "Vikas tejur",
+      donation: "250Rs"
+    },
+    {
+      name: "Elvina francy",
+      donation: "100Rs"
+    },
+    {
+      name: "Sowmya sri",
+      donation: "1250Rs"
+    },
+    {
+      name: "Andrea lewis",
+      donation: "1250Rs"
+    },
+    {
+      name: "Hemanth varapu",
+      donation: "8187Rs"
+    },
+    {
+      name: "soumya pandu",
+      donation: "1250Rs"
+    },
+    {
+      name: "vangala saikiran",
+      donation: "1000Rs"
+    },
+    {
+      name: "shanmukha bharathi",
+      donation: "100Rs"
+    },
+    {
+      name: "dhruv",
+      donation: "3000Rs"
+    },
+    {
+      name: "Ramya phadnis",
+      donation: "1500Rs"
+    },
+    {
+      name: "Sinha parivar",
+      donation: "2500Rs"
+    },
+    {
+      name: "khushi",
+      donation: "500Rs"
+    },
+    {
+      name: "fara",
+      donation: "250Rs"
+    },
+    {
+      name: "Shubha",
+      donation: "1000Rs"
+    },
+    {
+      name: "Midhun sukumaran",
+      donation: "1000Rs"
+    },
+    {
+      name: "Roopa G",
+      donation: "2500Rs"
+    },
+    {
+      name: "Samaneu satheesh",
+      donation: "750Rs"
+    },
+    {
+      name: "Hemasaiprasad",
+      donation: "5000Rs"
+    },
+    {
+      name: "Anup Sharma",
+      donation: "2500Rs"
+    },
+    {
+      name: "sireesha",
+      donation: "1250Rs"
+    },
+    {
+      name: "Srinivas",
+      donation: "250Rs"
+    },
+    {
+      name: "Harshita",
+      donation: "750Rs"
+    },
+    {
+      name: "Zaid",
+      donation: "1000Rs"
+    },
+    {
+      name: "Ch Rajesh ",
+      donation: "1500Rs"
+    },
+    {
+      name: "Somesh kothari",
+      donation: "2500Rs"
+    },
+    {
+      name: "Pragathi M",
+      donation: "1400Rs"
+    },
+    {
+      name: "Ganesh ",
+      donation: "4500Rs"
+    },
+    {
+      name: "Faisal Karobari ",
+      donation: "2880Rs"
+    },
+    {
+      name: "sanketh PondlaS",
+      donation: "1000Rs"
+    },
+    {
+      name: "Wai Ling",
+      donation: "100Rs"
+    },
+    {
+      name: "sandeep Teddy",
+      donation: "1500Rs"
+    },
+    {
+      name: "abijith CV",
+      donation: "500Rs"
+    },
+    {
+      name: "sai Ganesh ",
+      donation: "2500Rs"
+    },
+    {
+      name: "Sayyam Jain",
+      donation: "5500Rs"
+    },
+    {
+      name: "Ravi ",
+      donation: "3500Rs"
+    },
+    {
+      name: "D. Venkata sai",
+      donation: "1500Rs"
+    },
+    {
+      name: "Ramya ",
+      donation: "100Rs"
+    },
+    {
+      name: "jahnavi Reddy ",
+      donation: "375Rs"
+    },
+    {
+      name: "Izna Tasneem",
+      donation: "750Rs"
+    },
+    {
+      name: "Zeeshan Farhath",
+      donation: "300Rs"
+    },
+    {
+      name: "umesh_gudem",
+      donation: "2500Rs"
+    },
+    {
+      name: "Mayur Tarafdar",
+      donation: "3100Rs"
     },
   ];
   return (
@@ -231,7 +405,14 @@ const CauseDetails = () => {
                 <Form.Item label="Donor Name" labelCol={{ className: "custom-label" }} name="name" rules={[{ required: true, message: "Please enter your name!" }]}>
                   <Input placeholder="Your Name" className="causedetailsinput" />
                 </Form.Item>
-                <Form.Item
+                <Form.Item label="Name on Food Box" labelCol={{ className: "custom-label" }} name="parcel" rules={[{ required: true, message: "Please enter the parcel name!" }]}>
+                  <Input placeholder="Name of Parcel" className="causedetailsinput" />
+                </Form.Item>
+               
+              </div>
+
+              <div className="form-row">
+              <Form.Item
                   label="Email address"
                   labelCol={{ className: "custom-label" }}
                   name="email"
@@ -242,9 +423,6 @@ const CauseDetails = () => {
                 >
                   <Input placeholder="Your Email" className="causedetailsinput" />
                 </Form.Item>
-              </div>
-
-              <div className="form-row">
                 <Form.Item
                   label="Whatsapp Number"
                   labelCol={{ className: "custom-label" }}
@@ -259,6 +437,10 @@ const CauseDetails = () => {
                 >
                   <Input placeholder="Your Phone" className='causedetailsinput' />
                 </Form.Item>
+               
+              </div>
+
+              <div className="form-row">
                 <Form.Item label="Service Date" labelCol={{ className: "custom-label" }} name="service_date" rules={[{ required: true, message: "Please select a date!" }]}>
                   <DatePicker
                     className="causedetailsinput datepicker"
@@ -267,19 +449,13 @@ const CauseDetails = () => {
                     }}
                   />
                 </Form.Item>
-              </div>
-
-              <div className="form-row">
                 <Form.Item label="Instagram ID (optional)" labelCol={{ className: "custom-label" }} name="instagram">
                   <Input placeholder="Your Instagram ID" className="causedetailsinput" />
                 </Form.Item>
-                <Form.Item label="Name of Parcel" labelCol={{ className: "custom-label" }} name="parcel" rules={[{ required: true, message: "Please enter the parcel name!" }]}>
-                  <Input placeholder="Name of Parcel" className="causedetailsinput" />
-                </Form.Item>
               </div>
 
               <div className="form-row">
-                <Form.Item label="Food Count" name="count" labelCol={{ className: "custom-label" }}>
+                <Form.Item label="Count" name="count" labelCol={{ className: "custom-label" }}>
                   <Input
                     type="number"
                     min={1}
@@ -294,9 +470,9 @@ const CauseDetails = () => {
                 </Form.Item>
               </div>
 
-              <Form.Item label="Total Donation" onChange={handleCountChange} name="total_donation" labelCol={{ className: "custom-label" }}>
+              {/* <Form.Item label="Total Donation" onChange={handleCountChange} name="total_donation" labelCol={{ className: "custom-label" }}>
                 <Input type="number" min={0} className="causedetailsinput" />
-              </Form.Item>
+              </Form.Item> */}
 
               <h2>Packages</h2>
               <div className="form-image-checkbox">

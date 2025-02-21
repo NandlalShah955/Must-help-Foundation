@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import "../styles/About.css";
 import { Link } from 'react-router-dom';
 import Cakecutting4 from "../assets/cakecutting4.jpeg"; 
@@ -12,6 +12,10 @@ const About = () => {
     { image: "https://musthelp.foundation/assets/milkandbanana-C4Uyazmq.jpeg",  },
 
   ]
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className='about-main'>
       <div className='about-heading-tag'>
